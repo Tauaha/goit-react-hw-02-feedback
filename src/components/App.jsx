@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
-import Notiflix from 'notiflix';
+
 
 import FeedbackOptions from "components/Feedback/Feedback"
 import Statistics from 'components/Statistics/Statistics'
@@ -48,9 +48,10 @@ export default class App extends Component {
     return (
       <div
       style={{
+        margin: "20px",
         height: '100vh',
         alignItems: 'center',
-        fontSize: 40,
+        fontSize: 24,
         color: '#010101'
       }}
     >
@@ -62,20 +63,15 @@ export default class App extends Component {
      </Section>
     
     <Section title='Statistics'>
-      <Statistics 
+      {total >0? (<Statistics 
       good={options.good} 
       neutral={options.neutral} 
       bad={options.bad}
       total={total} 
-      positivePercentage={positivePercentage}/>
-      <Notification message="There is no feedback"></Notification>
-   
-
+      positivePercentage={positivePercentage}/>):
+     ( <Notification message="There is no feedback"/>)
+       }
     </Section>
-    
-    
-   
-
     </div>
     );
   }

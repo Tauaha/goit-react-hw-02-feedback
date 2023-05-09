@@ -1,12 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Notiflix from 'notiflix';
+
 
 const Notification =({message})=> {
-    return Notiflix.Notify.info({message});
+   return (
+    <>
+     <h5>{message}</h5>
+    </>
+  )
+}
+   
+      
+   
+
+   
 
     
-}
 
 Notification.prototype ={
     message: PropTypes.string.isRequired
