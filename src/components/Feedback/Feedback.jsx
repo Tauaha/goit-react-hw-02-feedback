@@ -16,7 +16,12 @@ import styles from "components/Feedback/Feedback.module.css"
                  </section> 
         ) }
 
-
+FeedbackOptions.propTypes ={
+    options:  PropTypes.arrayOf(PropTypes.string).isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+     
+      
+}
 export default FeedbackOptions
            
             
